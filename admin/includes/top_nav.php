@@ -21,7 +21,13 @@
                                     </span>
                         <div class="media-body">
                             <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                            <strong>
+                                                <?php 
+                                                
+                                                $user = Users::findById(1); 
+                                                    echo $user->username;
+                                                ?>
+                                            </strong>
                                         </h5>
                             <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                             <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -107,7 +113,7 @@
             </li>
             <li class="divider"></li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
             </li>
         </ul>
     </li>

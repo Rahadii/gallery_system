@@ -12,8 +12,8 @@
         }
 
         // membuat sebuah fungsi untuk menyambungkan ke database
-        public function open_db_connection(){
-            
+        public function open_db_connection()
+        {    
             // $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             
             $this->connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -38,7 +38,7 @@
         private function confirm_query($result){
             // validasi
             if(!$result){
-                die("Query Gagal" . $this->connection->error);
+                die("Query Gagal -> " . $this->connection->error);
             }            
         }
 
@@ -53,6 +53,7 @@
 
         public function insert_id(){
 
+            return mysqli_insert_id($this->connection);
         }
     }
 
